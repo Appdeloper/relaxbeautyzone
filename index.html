@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Relax Beauty Zone — Ladies Beauty Parlour in Dombivli East</title>
+<link rel="icon" type="image/png" href="logo.png" />
+<meta name="description" content="Relax Beauty Zone — a premium ladies-only beauty parlour in Dombivli East. Facials, Hydrafacial, Hair, Makeup, Bridal, Waxing, Threading, Mani-Pedi, Mehndi & Body Spa. Relax, Refresh, and Reveal Your Beauty." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#3a1326;        /* deep wine / dark sections */
+    --plum-2:#5a1f3d;
+    --rose:#c9184a;        /* primary brand */
+    --rose-soft:#e85d82;
+    --pink:#ff8fab;        /* soft accent */
+    --blush:#fde4ec;       /* light blush bg */
+    --cream:#fff7f3;       /* page bg */
+    --gold:#c79a44;        /* luxury accent */
+    --gold-light:#e7c878;
+    --ink:#2a1820;         /* body text */
+    --muted:#7a6068;       /* secondary text */
+    --white:#ffffff;
+    --shadow:0 18px 50px -20px rgba(58,19,38,.35);
+    --shadow-sm:0 8px 24px -12px rgba(58,19,38,.28);
+    --radius:22px;
+    --maxw:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.15;color:var(--plum)}
+  a{text-decoration:none;color:inherit}
+  img{max-width:100%;display:block}
+  .wrap{width:92%;max-width:var(--maxw);margin-inline:auto}
+  .script{font-family:'Great Vibes',cursive;color:var(--rose);font-weight:400}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    font-weight:600;color:var(--rose);margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:linear-gradient(90deg,var(--gold),var(--rose));border-radius:2px}
+  .section{padding:96px 0}
+  section[id]{scroll-margin-top:92px}
+  .section-head{text-align:center;max-width:660px;margin:0 auto 56px}
+  .section-head h2{font-size:clamp(2rem,4.2vw,3rem);margin-bottom:14px}
+  .section-head p{color:var(--muted)}
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;cursor:pointer;
+    font-weight:600;font-size:.95rem;border:none;border-radius:50px;
+    padding:15px 30px;transition:.3s;white-space:nowrap;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--rose),var(--rose-soft));color:#fff;box-shadow:0 12px 26px -10px rgba(201,24,74,.6)}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px -10px rgba(201,24,74,.7)}
+  .btn-ghost{background:transparent;color:var(--plum);border:1.6px solid rgba(58,19,38,.18)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose)}
+  .btn-wa{background:#25D366;color:#fff;box-shadow:0 12px 26px -10px rgba(37,211,102,.6)}
+  .btn-wa:hover{transform:translateY(-3px);filter:brightness(1.05)}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:#3a2a00}
+  .btn-gold:hover{transform:translateY(-3px)}
+
+  /* ===== NAV ===== */
+  header{position:sticky;top:0;z-index:100;transition:.35s}
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:16px 0;
+  }
+  header.scrolled{background:rgba(255,247,243,.92);backdrop-filter:blur(12px);box-shadow:0 6px 24px -16px rgba(58,19,38,.5)}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand .logo{height:64px;width:auto;flex:0 0 auto;border-radius:10px;display:block;box-shadow:0 4px 12px -4px rgba(58,19,38,.4)}
+  .brand .name{display:flex;flex-direction:column;line-height:1}
+  .brand .name b{font-family:'Playfair Display',serif;font-size:1.18rem;color:var(--plum);letter-spacing:.5px}
+  .brand .name span{font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--rose);margin-top:3px;font-weight:600}
+  .nav-links{display:flex;align-items:center;gap:30px}
+  .nav-links a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;transition:.25s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--rose);transition:.3s;border-radius:2px}
+  .nav-links a:hover{color:var(--rose)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:flex;align-items:center;gap:14px}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .hamburger span{width:26px;height:2.5px;background:var(--plum);border-radius:2px;transition:.3s}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#fff7f3 0%,#fde4ec 55%,#fbd4e0 100%)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:70px 0 90px}
+  .hero-copy .badge{
+    display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--rose);
+    font-weight:600;font-size:.8rem;padding:8px 16px;border-radius:50px;box-shadow:var(--shadow-sm);margin-bottom:22px;
+  }
+  .hero-copy h1{font-size:clamp(2.4rem,5.4vw,4rem);margin-bottom:8px}
+  .hero-copy h1 .accent{color:var(--rose)}
+  .hero-copy .tagline{font-family:'Great Vibes',cursive;font-size:clamp(1.6rem,3.4vw,2.4rem);color:var(--gold);margin-bottom:18px}
+  .hero-copy p.lead{color:var(--muted);font-size:1.05rem;max-width:520px;margin-bottom:30px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+  .hero-stats .stat b{font-family:'Playfair Display',serif;font-size:1.7rem;color:var(--plum);display:block}
+  .hero-stats .stat span{font-size:.8rem;color:var(--muted)}
+  .hero-visual{position:relative}
+  .hero-visual .photo{
+    border-radius:30px;overflow:hidden;box-shadow:var(--shadow);
+    aspect-ratio:4/5;background:linear-gradient(135deg,#5a1f3d,#c9184a);
+  }
+  .hero-visual .photo img{width:100%;height:100%;object-fit:cover}
+  .hero-visual .float-card{
+    position:absolute;background:#fff;border-radius:18px;padding:14px 18px;
+    box-shadow:var(--shadow);display:flex;align-items:center;gap:12px;
+  }
+  .hero-visual .fc-rating{top:24px;left:-26px}
+  .hero-visual .fc-ladies{bottom:30px;right:-22px}
+  .fc-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.3rem}
+  .fc-rating .fc-icon{background:#fff4d6}
+  .fc-ladies .fc-icon{background:var(--blush)}
+  .float-card b{font-size:.95rem;color:var(--plum)}
+  .float-card small{font-size:.72rem;color:var(--muted);display:block}
+
+  /* ===== ABOUT ===== */
+  .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:60px;align-items:center}
+  .about-img{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1;background:linear-gradient(135deg,#fde4ec,#ff8fab)}
+  .about-img img{width:100%;height:100%;object-fit:cover}
+  .about-copy h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:18px}
+  .about-copy p{color:var(--muted);margin-bottom:16px}
+  .about-points{list-style:none;display:grid;gap:14px;margin:24px 0 30px}
+  .about-points li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
+  .tick{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--blush);color:var(--rose);display:grid;place-items:center;font-weight:700;font-size:.85rem}
+  .owner-tag{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
+  .owner-tag .sig{font-family:'Great Vibes',cursive;font-size:1.6rem;color:var(--rose)}
+
+  /* ===== SERVICES ===== */
+  #services{background:linear-gradient(180deg,#fff7f3, #fff)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .svc-card{
+    background:#fff;border:1px solid #f4dbe4;border-radius:var(--radius);padding:30px 26px;
+    box-shadow:var(--shadow-sm);transition:.35s;position:relative;overflow:hidden;
+  }
+  .svc-card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--rose),var(--gold));transform:scaleX(0);transform-origin:left;transition:.4s}
+  .svc-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:#f0c4d3}
+  .svc-card:hover::before{transform:scaleX(1)}
+  .svc-icon{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,var(--blush),#ffd9e4);display:grid;place-items:center;margin-bottom:18px;color:var(--rose)}
+  .svc-icon svg{width:30px;height:30px}
+  .svc-card h3{font-size:1.3rem;margin-bottom:12px}
+  .svc-card .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+  .svc-card .tags span{font-size:.76rem;background:var(--cream);border:1px solid #f1dde4;color:var(--muted);padding:5px 11px;border-radius:50px}
+  .svc-book{font-weight:600;color:var(--rose);font-size:.9rem;display:inline-flex;align-items:center;gap:6px;transition:.25s}
+  .svc-book:hover{gap:10px}
+
+  /* ===== WHY ===== */
+  #why{background:var(--plum);color:#fff;position:relative;overflow:hidden}
+  #why::before{content:"";position:absolute;width:480px;height:480px;background:radial-gradient(circle,var(--rose),transparent 70%);opacity:.4;top:-160px;right:-120px}
+  #why .section-head h2{color:#fff}
+  #why .section-head p{color:#e9c9d6}
+  #why .eyebrow{color:var(--gold-light)}
+  #why .eyebrow::before{background:var(--gold-light)}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;z-index:1}
+  .why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px 24px;text-align:center;transition:.35s;backdrop-filter:blur(4px)}
+  .why-card:hover{background:rgba(255,255,255,.12);transform:translateY(-6px)}
+  .why-emoji{font-size:2.2rem;margin-bottom:14px}
+  .why-card h3{color:#fff;font-size:1.2rem;margin-bottom:8px}
+  .why-card p{color:#e7cdd8;font-size:.9rem}
+
+  /* ===== PACKAGES ===== */
+  .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .pkg-card{
+    background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);
+    border:1px solid #f4dbe4;display:flex;flex-direction:column;transition:.35s;position:relative;
+  }
+  .pkg-card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .pkg-card.featured{border:2px solid var(--gold)}
+  .pkg-ribbon{position:absolute;top:16px;right:-34px;background:var(--gold);color:#3a2a00;font-size:.7rem;font-weight:700;letter-spacing:.1em;padding:5px 40px;transform:rotate(45deg)}
+  .pkg-top{background:linear-gradient(135deg,var(--plum-2),var(--rose));color:#fff;padding:26px 24px}
+  .pkg-top .ico{font-size:1.8rem;margin-bottom:8px}
+  .pkg-top h3{color:#fff;font-size:1.25rem}
+  .pkg-body{padding:22px 24px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .pkg-body ul{list-style:none;display:grid;gap:9px;flex:1}
+  .pkg-body li{font-size:.88rem;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+  .pkg-body li::before{content:"✦";color:var(--gold);font-size:.8rem;margin-top:2px}
+  .pkg-body .btn{justify-content:center;margin-top:8px}
+
+  /* ===== TESTIMONIALS ===== */
+  #reviews{background:linear-gradient(180deg,#fff,#fff7f3)}
+  .rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .rev-card{background:#fff;border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow-sm);border:1px solid #f4dbe4;position:relative}
+  .rev-card .quote{position:absolute;top:18px;right:26px;font-family:'Playfair Display',serif;font-size:3.4rem;color:var(--blush);line-height:1}
+  .stars{color:var(--gold);letter-spacing:2px;margin-bottom:14px}
+  .rev-card p{color:var(--ink);font-size:.95rem;margin-bottom:20px;position:relative;z-index:1}
+  .rev-author{display:flex;align-items:center;gap:12px}
+  .rev-avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;display:grid;place-items:center;font-weight:700}
+  .rev-author b{display:block;font-size:.92rem;color:var(--plum)}
+  .rev-author small{color:var(--muted);font-size:.78rem}
+
+  /* ===== FAQ ===== */
+  .faq-wrap{max-width:780px;margin:0 auto;display:grid;gap:14px}
+  .faq-item{background:#fff;border:1px solid #f1dde4;border-radius:16px;overflow:hidden;transition:.3s}
+  .faq-item.open{box-shadow:var(--shadow-sm);border-color:#f0c4d3}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;cursor:pointer;font-weight:600;color:var(--plum)}
+  .faq-q .ic{flex:0 0 auto;width:28px;height:28px;border-radius:50%;background:var(--blush);color:var(--rose);display:grid;place-items:center;font-size:1.2rem;transition:.3s}
+  .faq-item.open .ic{transform:rotate(45deg);background:var(--rose);color:#fff}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;color:var(--muted)}
+  .faq-a div{padding:0 24px 20px}
+
+  /* ===== BOOKING ===== */
+  #book{background:linear-gradient(135deg,#5a1f3d,#3a1326);color:#fff;position:relative;overflow:hidden}
+  #book::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--rose),transparent 70%);opacity:.35;bottom:-200px;left:-160px}
+  .book-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .book-copy .eyebrow{color:var(--gold-light)}
+  .book-copy .eyebrow::before{background:var(--gold-light)}
+  .book-copy h2{color:#fff;font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px}
+  .book-copy p{color:#e9c9d6;margin-bottom:26px}
+  .book-info{display:grid;gap:16px;margin-top:10px}
+  .book-info a,.book-info div{display:flex;align-items:center;gap:14px;color:#f3dde6}
+  .bi-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.1);display:grid;place-items:center;flex:0 0 auto;color:var(--gold-light)}
+  .book-form{background:#fff;border-radius:26px;padding:34px;box-shadow:var(--shadow)}
+  .book-form h3{font-size:1.5rem;margin-bottom:6px}
+  .book-form .sub{color:var(--muted);font-size:.88rem;margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.8rem;font-weight:600;color:var(--plum);margin-bottom:6px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:13px 15px;border:1.5px solid #ecd6de;border-radius:12px;
+    font-family:inherit;font-size:.92rem;color:var(--ink);background:#fffafb;transition:.25s;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--rose);background:#fff;box-shadow:0 0 0 4px rgba(201,24,74,.08)}
+  .field textarea{resize:vertical;min-height:70px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .book-form .btn-wa{width:100%;justify-content:center;margin-top:6px;padding:16px}
+  .form-note{text-align:center;font-size:.76rem;color:var(--muted);margin-top:12px}
+
+  /* ===== FOOTER ===== */
+  footer{background:#2a0e1c;color:#e9cdd8;padding:70px 0 30px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:40px;margin-bottom:46px}
+  .foot-brand .brand .name b{color:#fff}
+  .foot-brand p{margin:18px 0;font-size:.9rem;color:#cda6b6}
+  .foot-social{display:flex;gap:12px}
+  .foot-social a{width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.3s;color:#fff}
+  .foot-social a:hover{background:var(--rose);transform:translateY(-3px)}
+  .foot-col h4{color:#fff;font-family:'Poppins',sans-serif;font-size:.85rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:20px}
+  .foot-col ul{list-style:none;display:grid;gap:12px}
+  .foot-col a,.foot-col li{color:#cda6b6;font-size:.9rem;transition:.25s}
+  .foot-col a:hover{color:var(--gold-light)}
+  .map-embed{border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.12);height:160px}
+  .map-embed iframe{width:100%;height:100%;border:0;filter:grayscale(.2)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:#a87e90}
+  .foot-bottom .heart{color:var(--rose)}
+
+  /* ===== FLOATING WA ===== */
+  .wa-float{
+    position:fixed;bottom:24px;right:24px;z-index:200;width:60px;height:60px;border-radius:50%;
+    background:#25D366;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(37,211,102,.7);
+    animation:pulse 2.4s infinite;transition:.3s;
+  }
+  .wa-float:hover{transform:scale(1.08)}
+  .wa-float svg{width:32px;height:32px;fill:#fff}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(34px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .reveal.show{opacity:1;transform:none}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:980px){
+    .svc-grid,.why-grid,.pkg-grid,.rev-grid{grid-template-columns:repeat(2,1fr)}
+    .hero-grid,.about-grid,.book-grid{grid-template-columns:1fr;gap:46px}
+    .hero-visual{max-width:420px;margin-inline:auto}
+    .about-img{max-width:440px;margin-inline:auto}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:34px}
+  }
+  @media(max-width:760px){
+    .nav-links{
+      position:fixed;inset:0 0 0 auto;width:min(78%,320px);background:#fff;flex-direction:column;
+      align-items:flex-start;justify-content:flex-start;padding:90px 32px 32px;gap:22px;
+      transform:translateX(105%);transition:.4s;box-shadow:-20px 0 50px -20px rgba(58,19,38,.4);
+    }
+    .nav-links.open{transform:translateX(0)}
+    .nav-links a{font-size:1.05rem}
+    .nav .nav-cta .btn-ghost{display:none}
+    .hamburger{display:flex;z-index:120}
+    .hamburger.active span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+    .section{padding:72px 0}
+    section[id]{scroll-margin-top:72px}
+    .hero-visual .float-card{display:none}
+    .nav{padding:10px 0}
+    .brand .logo{height:52px}
+    .brand .name b{font-size:1.02rem}
+    .brand .name span{font-size:.55rem;letter-spacing:.2em}
+    .nav-cta .btn-primary{padding:11px 18px;font-size:.86rem}
+    .hero-grid{padding:36px 0 60px}
+    .hero-actions{width:100%}
+    .hero-actions .btn{flex:1 1 170px;justify-content:center}
+    .section-head{margin-bottom:42px}
+  }
+  @media(max-width:560px){
+    .svc-grid,.why-grid,.pkg-grid,.rev-grid,.two-col{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr;gap:30px}
+    .book-form{padding:26px 20px}
+    .section{padding:58px 0}
+    .wrap{width:90%}
+    .hero-copy .badge{font-size:.7rem;padding:7px 13px;line-height:1.4}
+    .hero-stats{gap:16px}
+    .hero-stats .stat b{font-size:1.5rem}
+    .hero-stats .stat span{font-size:.74rem}
+    .svc-card,.pkg-body,.rev-card{padding-left:22px;padding-right:22px}
+    .book-grid{gap:40px}
+    .foot-bottom{flex-direction:column;text-align:center;gap:8px}
+    .wa-float{width:54px;height:54px;bottom:18px;right:18px}
+    .wa-float svg{width:28px;height:28px}
+  }
+  @media(max-width:400px){
+    .brand .name span{display:none}
+    .brand .logo{height:48px}
+    .brand .name b{font-size:.96rem}
+    .nav-cta .btn-primary{padding:9px 14px;font-size:.8rem}
+    .hero-copy h1{font-size:2.1rem}
+    .hero-copy .tagline{font-size:1.5rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img class="logo" src="logo.png" alt="Relax Beauty Zone — Only For Ladies logo" />
+      <span class="name"><b>Relax Beauty Zone</b><span>Only For Ladies</span></span>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#packages">Packages</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#book">Contact</a>
+    </nav>
+
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#book">Book Now</a>
+      <button class="hamburger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal">
+      <span class="badge">💖 Premium Ladies Beauty Parlour · Dombivli East</span>
+      <h1>Relax, Refresh &amp; <span class="accent">Reveal</span> Your Beauty</h1>
+      <p class="tagline">Where beauty meets relaxation</p>
+      <p class="lead">A calm, ladies-only space offering facials, hydrafacial, hair styling, bridal makeup, mehndi, waxing, mani-pedi &amp; body spa — so you look gorgeous and leave refreshed.</p>
+      <div class="hero-actions">
+        <a class="btn btn-wa" href="#book">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.616z"/></svg>
+          Book on WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#services">View Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b>2000+</b><span>Happy Clients</span></div>
+        <div class="stat"><b>50+</b><span>Beauty Services</span></div>
+        <div class="stat"><b>5★</b><span>Loved by Ladies</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="photo">
+        <img src="salon-interior.jpg" alt="Inside Relax Beauty Zone — our ladies salon in Dombivli East" loading="lazy">
+      </div>
+      <div class="float-card fc-rating">
+        <div class="fc-icon">⭐</div>
+        <div><b>5.0 Rating</b><small>Loved by our clients</small></div>
+      </div>
+      <div class="float-card fc-ladies">
+        <div class="fc-icon">👩</div>
+        <div><b>Only For Ladies</b><small>Private &amp; comfortable</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="wrap about-grid">
+    <div class="about-img reveal">
+      <img src="salon-interior.jpg" alt="Inside Relax Beauty Zone — our ladies salon in Dombivli East" loading="lazy">
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow">About Us</span>
+      <h2>A place where beauty meets relaxation</h2>
+      <p><b>Relax Beauty Zone</b> is a premium ladies-only beauty parlour in Dombivli East. We offer professional beauty &amp; self-care services to help you look gorgeous, feel confident, and leave refreshed.</p>
+      <p>From everyday grooming to your most special bridal day, our skilled beauticians give you personal attention in a clean, calm and welcoming space.</p>
+      <ul class="about-points">
+        <li><span class="tick">✓</span> Exclusively for women — private &amp; comfortable</li>
+        <li><span class="tick">✓</span> Skilled, friendly &amp; experienced beauticians</li>
+        <li><span class="tick">✓</span> Strict hygiene with fresh, sanitised tools</li>
+        <li><span class="tick">✓</span> Bridal, party, mehndi &amp; everyday beauty under one roof</li>
+      </ul>
+      <div class="owner-tag">
+        <span class="sig">Mohini D'souza</span>
+        <small style="color:var(--muted)">— Founder, Relax Beauty Zone</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Everything to keep you glowing</h2>
+      <p>A complete menu of beauty &amp; self-care — pick what you love, or message us and we'll guide you.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid"><!-- injected by JS --></div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section id="why" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>Beauty that you truly deserve</h2>
+      <p>Little details that make every visit feel relaxing and special.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-emoji">👩‍🦰</div><h3>Only For Ladies</h3><p>A safe, private and comfortable space designed just for women.</p></div>
+      <div class="why-card reveal"><div class="why-emoji">💅</div><h3>Skilled &amp; Caring</h3><p>Trained beauticians who treat your skin and hair with real care.</p></div>
+      <div class="why-card reveal"><div class="why-emoji">🧼</div><h3>Hygiene First</h3><p>Clean stations, fresh disposables and properly sanitised tools.</p></div>
+      <div class="why-card reveal"><div class="why-emoji">💝</div><h3>Premium, Fair Price</h3><p>Salon-quality treatments that comfortably fit your budget.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PACKAGES ============ -->
+<section id="packages" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Special Packages</span>
+      <h2>Curated combos, made for you</h2>
+      <p>Mix &amp; match favourites in one relaxing session. Message us for today's offer pricing.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card reveal">
+        <div class="pkg-top"><div class="ico">💆‍♀️</div><h3>Glow &amp; Go</h3></div>
+        <div class="pkg-body">
+          <ul><li>Hydrafacial / Glow Facial</li><li>D-Tan Clean-up</li><li>Eyebrow Threading</li><li>Upper Lip Threading</li></ul>
+          <a class="btn btn-gold pkg-enquire" data-pkg="Glow & Go Package" href="#">Enquire on WhatsApp</a>
+        </div>
+      </div>
+      <div class="pkg-card featured reveal">
+        <div class="pkg-ribbon">POPULAR</div>
+        <div class="pkg-top"><div class="ico">👰</div><h3>Bridal Glam</h3></div>
+        <div class="pkg-body">
+          <ul><li>Bridal Makeup (HD)</li><li>Hair Do &amp; Styling</li><li>Saree Draping</li><li>Bridal Mehndi</li><li>Pre-bridal Facial</li></ul>
+          <a class="btn btn-gold pkg-enquire" data-pkg="Bridal Glam Package" href="#">Enquire on WhatsApp</a>
+        </div>
+      </div>
+      <div class="pkg-card reveal">
+        <div class="pkg-top"><div class="ico">💅</div><h3>Hands &amp; Feet Spa</h3></div>
+        <div class="pkg-body">
+          <ul><li>Spa Manicure</li><li>Spa Pedicure</li><li>Polishing</li><li>Hand &amp; Foot Massage</li></ul>
+          <a class="btn btn-gold pkg-enquire" data-pkg="Hands & Feet Spa Package" href="#">Enquire on WhatsApp</a>
+        </div>
+      </div>
+      <div class="pkg-card reveal">
+        <div class="pkg-top"><div class="ico">🌸</div><h3>Pamper &amp; Relax</h3></div>
+        <div class="pkg-body">
+          <ul><li>Full Body Massage</li><li>Body Polishing</li><li>Head Massage</li><li>Facial of Choice</li></ul>
+          <a class="btn btn-gold pkg-enquire" data-pkg="Pamper & Relax Package" href="#">Enquire on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Happy Clients</span>
+      <h2>Loved by the ladies of Dombivli</h2>
+      <p>A few words from clients who relaxed, refreshed and revealed their beauty with us.</p>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <div class="quote">”</div>
+        <div class="stars">★★★★★</div>
+        <p>Got my bridal makeup &amp; mehndi done here and I felt absolutely stunning. So patient and professional — highly recommended!</p>
+        <div class="rev-author"><div class="rev-avatar">P</div><div><b>Priya S.</b><small>Bridal Makeup</small></div></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="quote">”</div>
+        <div class="stars">★★★★★</div>
+        <p>The hydrafacial left my skin glowing for days. Clean, calm and only for ladies — exactly what I wanted. I keep coming back.</p>
+        <div class="rev-author"><div class="rev-avatar">A</div><div><b>Aishwarya M.</b><small>Hydrafacial</small></div></div>
+      </div>
+      <div class="rev-card reveal">
+        <div class="quote">”</div>
+        <div class="stars">★★★★★</div>
+        <p>Lovely staff, very hygienic and reasonable. My monthly waxing, threading and pedicure spot now. Mohini ma'am is the best!</p>
+        <div class="rev-author"><div class="rev-avatar">R</div><div><b>Reshma K.</b><small>Regular Client</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="section" style="background:linear-gradient(180deg,#fff7f3,#fff)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Good to know before you visit</h2>
+    </div>
+    <div class="faq-wrap reveal">
+      <div class="faq-item"><div class="faq-q">Is Relax Beauty Zone only for ladies?<span class="ic">+</span></div><div class="faq-a"><div>Yes! We are an exclusively ladies beauty parlour, so you can relax in a completely private and comfortable space.</div></div></div>
+      <div class="faq-item"><div class="faq-q">What are your timings &amp; days?<span class="ic">+</span></div><div class="faq-a"><div>We're open <b>10:30 AM to 9:30 PM</b>, and we're <b>closed on Mondays</b>. Walk-ins are welcome, but booking ahead on WhatsApp avoids waiting.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Do I need an appointment?<span class="ic">+</span></div><div class="faq-a"><div>Not mandatory, but recommended — especially for facials, bridal and party makeup. Just message us on WhatsApp with your preferred date &amp; time.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Do you do bridal makeup &amp; mehndi?<span class="ic">+</span></div><div class="faq-a"><div>Yes — light, party and HD bridal makeup, hair do, saree draping and bridal/party mehndi. Ask us about our Bridal Glam package.</div></div></div>
+      <div class="faq-item"><div class="faq-q">Where are you located?<span class="ic">+</span></div><div class="faq-a"><div>Shop No.6, Vastu Vihar CHS, Desale Pada, Manpada Road, Dombivli East, Thane — 421201. See the map in the footer for directions.</div></div></div>
+      <div class="faq-item"><div class="faq-q">How do I see prices?<span class="ic">+</span></div><div class="faq-a"><div>Pricing depends on the service, length/design and products chosen. Message us on WhatsApp and we'll happily share current rates and offers.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="book" class="section">
+  <div class="wrap book-grid">
+    <div class="book-copy reveal">
+      <span class="eyebrow">Book An Appointment</span>
+      <h2>Let's plan your pamper time</h2>
+      <p>Fill in a few details and tap the button — it opens WhatsApp with your appointment request ready to send. We'll confirm your slot right away.</p>
+      <div class="book-info">
+        <a href="tel:+919702922069"><span class="bi-icon">📞</span><span><b>Call us</b><br><small style="color:#e9c9d6">+91 97029 22069</small></span></a>
+        <a href="https://wa.me/919619375503" target="_blank" rel="noopener"><span class="bi-icon">💬</span><span><b>WhatsApp</b><br><small style="color:#e9c9d6">+91 96193 75503</small></span></a>
+        <a href="mailto:melroy30dzouza@gmail.com"><span class="bi-icon">✉️</span><span><b>Email</b><br><small style="color:#e9c9d6">melroy30dzouza@gmail.com</small></span></a>
+        <div><span class="bi-icon">📍</span><span><b>Visit us</b><br><small style="color:#e9c9d6">Shop No.6, Vastu Vihar CHS, Desale Pada, Manpada Rd, Dombivli East — 421201</small></span></div>
+        <div><span class="bi-icon">🕒</span><span><b>Open Hours</b><br><small style="color:#e9c9d6">Tue–Sun: 10:30 AM – 9:30 PM · Mon: Closed</small></span></div>
+      </div>
+    </div>
+
+    <form class="book-form reveal" id="bookForm">
+      <h3>Request a Booking</h3>
+      <p class="sub">Quick &amp; easy — sent straight to our WhatsApp.</p>
+      <div class="field">
+        <label for="bname">Your Name</label>
+        <input type="text" id="bname" placeholder="e.g. Sneha Patil" required>
+      </div>
+      <div class="field">
+        <label for="bservice">Service</label>
+        <select id="bservice" required>
+          <option value="" disabled selected>Select a service</option>
+          <option>Facial / Hydrafacial</option>
+          <option>Threading</option>
+          <option>Waxing</option>
+          <option>Bleach / D-Tan</option>
+          <option>Manicure &amp; Pedicure</option>
+          <option>Hair Cut &amp; Styling</option>
+          <option>Hair Colour / Spa</option>
+          <option>Makeup (Party / Bridal)</option>
+          <option>Mehndi</option>
+          <option>Body Spa &amp; Massage</option>
+          <option>Bridal Package</option>
+          <option>Other / Not sure</option>
+        </select>
+      </div>
+      <div class="two-col">
+        <div class="field"><label for="bdate">Preferred Date</label><input type="date" id="bdate"></div>
+        <div class="field"><label for="btime">Preferred Time</label><input type="time" id="btime"></div>
+      </div>
+      <div class="field">
+        <label for="bmsg">Message (optional)</label>
+        <textarea id="bmsg" placeholder="Anything we should know?"></textarea>
+      </div>
+      <button type="submit" class="btn btn-wa">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.616z"/></svg>
+        Send Booking on WhatsApp
+      </button>
+      <p class="form-note">No app needed on desktop — opens WhatsApp Web.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="brand">
+          <img class="logo" src="logo.png" alt="Relax Beauty Zone — Only For Ladies logo" />
+          <span class="name"><b>Relax Beauty Zone</b><span style="color:var(--gold-light)">Only For Ladies</span></span>
+        </a>
+        <p>Relax, Refresh, and Reveal Your Beauty. 🌸 A premium ladies beauty parlour in Dombivli East.</p>
+        <div class="foot-social">
+          <a href="https://www.instagram.com/__relaxbeautyzone__0.9?igsh=MWh1Y3JzNXZ4MnhoZw==" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.2 1 .46 1.4.86.4.4.66.8.86 1.4.17.5.36 1.1.42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.2.6-.46 1-.86 1.4-.4.4-.8.66-1.4.86-.5.17-1.1.36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.2-1-.46-1.4-.86-.4-.4-.66-.8-.86-1.4-.17-.5-.36-1.1-.42-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.2-.6.46-1 .86-1.4.4-.4.8-.66 1.4-.86.5-.17 1.1-.36 2.2-.42C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.32-.43.17-.74.37-1.06.7-.32.32-.52.63-.7 1.06-.12.3-.28.8-.32 1.7C3.25 9 3.24 9.4 3.24 12s0 3 .07 4.1c.04.9.2 1.4.32 1.7.17.43.37.74.7 1.06.32.32.63.52 1.06.7.3.12.8.28 1.7.32 1.2.06 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.32.43-.17.74-.37 1.06-.7.32-.32.52-.63.7-1.06.12-.3.28-.8.32-1.7.06-1.1.07-1.5.07-4.1s0-3-.07-4.1c-.04-.9-.2-1.4-.32-1.7a2.86 2.86 0 00-.7-1.06 2.86 2.86 0 00-1.06-.7c-.3-.12-.8-.28-1.7-.32C15.5 4 15.1 4 12 4zm0 3.06A4.94 4.94 0 1012 17a4.94 4.94 0 000-9.88zm0 8.15A3.21 3.21 0 1112 8.8a3.21 3.21 0 010 6.4zm6.3-8.35a1.15 1.15 0 11-2.3 0 1.15 1.15 0 012.3 0z"/></svg>
+          </a>
+          <a href="https://wa.me/919619375503" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.616z"/></svg>
+          </a>
+          <a href="tel:+919702922069" aria-label="Call">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Popular</h4>
+        <ul>
+          <li><a href="#book">Hydrafacial</a></li>
+          <li><a href="#book">Bridal Makeup</a></li>
+          <li><a href="#book">Mehndi</a></li>
+          <li><a href="#book">Hair &amp; Spa</a></li>
+          <li><a href="#book">Waxing &amp; Threading</a></li>
+        </ul>
+      </div>
+
+      <div class="foot-col">
+        <h4>Find Us</h4>
+        <div class="map-embed">
+          <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Relax Beauty Zone location"
+            src="https://www.google.com/maps?q=Vastu%20Vihar%20CHS%2C%20Desale%20Pada%2C%20Manpada%20Road%2C%20Dombivli%20East%2C%20Thane%20421201&output=embed"></iframe>
+        </div>
+        <p style="margin-top:14px;font-size:.85rem;color:#cda6b6">🕒 Tue–Sun 10:30 AM – 9:30 PM · Mon Closed</p>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Relax Beauty Zone · Dombivli East. All rights reserved.</span>
+      <span>Made with <span class="heart">♥</span> for beautiful you</span>
+    </div>
+  </div>
+</footer>
+
+<!-- floating whatsapp -->
+<a class="wa-float" href="https://wa.me/919619375503?text=Hi%20Relax%20Beauty%20Zone%2C%20I'd%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.616zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+</a>
+
+<script>
+/* ---------- Services data (no prices) ---------- */
+const services = [
+  { t:"Facials & Hydrafacial", i:"face", tags:["Hydrafacial","Gold","Diamond","Platinum","Whitening","D-Tan","Anti-Ageing","Oxy Glow","Fruit","Aloevera","Insta Glow","Wine","Pearl","Silver"] },
+  { t:"Hair Cut & Styling", i:"hair", tags:["U Cut","V Cut","Deep U Cut","Straight Cut","Hair Spa","Hair Pack","Henna","Root Touch-Up","Global Colour","Ironing","Tonging","Blow Dry"] },
+  { t:"Makeup", i:"makeup", tags:["Bridal Makeup","HD Makeup","Party Makeup","Light Makeup","Hair Do","Saree Draping"] },
+  { t:"Mehndi", i:"mehndi", tags:["Bridal Mehndi","Party Mehndi","Custom Designs"] },
+  { t:"Threading", i:"thread", tags:["Eyebrows","Upper Lips","Chin","Forehead","Side Looks","Full Face"] },
+  { t:"Waxing", i:"wax", tags:["Full Arms","Half Arms","Full Legs","Half Legs","Under Arms","Stomach","Back","Brazilian","Full Body"] },
+  { t:"Bleach & D-Tan", i:"bleach", tags:["Face","Face & Neck","Full Arms","Full Legs","Feet","Under Arms","Full Body"] },
+  { t:"Manicure & Pedicure", i:"nails", tags:["Normal Manicure","Spa Manicure","Polishing Manicure","Normal Pedicure","Spa Pedicure","Polishing Pedicure"] },
+  { t:"Body Spa & Massage", i:"spa", tags:["Head Massage","Foot Massage","Body Massage","Body Scrub","Body Polishing"] },
+];
+
+const icons = {
+  face:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8.5 15c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"/></svg>',
+  hair:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-7 4-13 8-16 4 3 8 9 8 16"/><path d="M8 20c0-4 1.6-8 4-10.5C14.4 12 16 16 16 20"/></svg>',
+  makeup:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3l6 6L7 17l-4 1 1-4z"/><path d="M14 6l4-4 2 2-4 4"/></svg>',
+  mehndi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c-4-3-7-6-7-10a7 7 0 0114 0c0 4-3 7-7 10z"/><path d="M12 8v6M9 11h6"/></svg>',
+  thread:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M3 12c3-4 15-4 18 0M3 12c3 4 15 4 18 0"/><circle cx="12" cy="12" r="1.6"/></svg>',
+  wax:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="3" width="12" height="8" rx="2"/><path d="M9 11v4l-2 6h10l-2-6v-4"/></svg>',
+  bleach:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6 6 10a6 6 0 01-12 0c0-4 6-10 6-10z"/></svg>',
+  nails:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 13V6a2 2 0 014 0M12 13V4a2 2 0 014 0v9M8 13a4 4 0 008 0M8 13c-1 0-2 .5-2 2v2a5 5 0 0010 0v-2c0-1.5-1-2-2-2"/></svg>',
+  spa:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c-3-5-7-7-7-12a3 3 0 016 0c0-3 4-3 4 0a3 3 0 016 0c0 5-4 7-7 12z"/></svg>',
+};
+
+const WA = "919619375503";
+const waLink = (msg) => `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+
+/* render service cards */
+const grid = document.getElementById('svcGrid');
+grid.innerHTML = services.map(s=>`
+  <div class="svc-card reveal">
+    <div class="svc-icon">${icons[s.i]}</div>
+    <h3>${s.t}</h3>
+    <div class="tags">${s.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+    <a class="svc-book" target="_blank" rel="noopener"
+       href="${waLink('Hi Relax Beauty Zone, I would like to book: '+s.t+'. Please share details.')}">
+       Book ${s.t.split(' ')[0]} &rarr;</a>
+  </div>`).join('');
+
+/* package enquiry links */
+document.querySelectorAll('.pkg-enquire').forEach(a=>{
+  a.href = waLink('Hi Relax Beauty Zone, I am interested in the '+a.dataset.pkg+'. Please share details & pricing.');
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+/* booking form -> whatsapp */
+document.getElementById('bookForm').addEventListener('submit', e=>{
+  e.preventDefault();
+  const name = document.getElementById('bname').value.trim();
+  const svc  = document.getElementById('bservice').value;
+  const date = document.getElementById('bdate').value;
+  const time = document.getElementById('btime').value;
+  const note = document.getElementById('bmsg').value.trim();
+  let msg = `Hi Relax Beauty Zone! 🌸\nI'd like to book an appointment.\n\n`;
+  msg += `👩 Name: ${name}\n`;
+  msg += `💅 Service: ${svc}\n`;
+  if(date) msg += `📅 Date: ${date}\n`;
+  if(time) msg += `⏰ Time: ${time}\n`;
+  if(note) msg += `📝 Note: ${note}\n`;
+  msg += `\nPlease confirm my slot. Thank you!`;
+  window.open(waLink(msg), '_blank');
+});
+
+/* FAQ accordion */
+document.querySelectorAll('.faq-item').forEach(item=>{
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  q.addEventListener('click', ()=>{
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>{
+      i.classList.remove('open'); i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!open){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; }
+  });
+});
+
+/* mobile nav */
+const burger = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+burger.addEventListener('click', ()=>{
+  burger.classList.toggle('active');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(l=>l.addEventListener('click', ()=>{
+  burger.classList.remove('active'); navLinks.classList.remove('open');
+}));
+
+/* sticky header style */
+window.addEventListener('scroll', ()=>{
+  document.querySelector('header').classList.toggle('scrolled', window.scrollY > 30);
+});
+
+/* reveal on scroll */
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('show'); io.unobserve(en.target);} });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* year */
+document.getElementById('yr').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
